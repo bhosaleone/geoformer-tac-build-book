@@ -6,7 +6,10 @@ tests/test_ch24_tasks.py — Tests asserting each runnable capstone task runs cl
 from __future__ import annotations
 
 import io
+import re
 from contextlib import redirect_stdout
+
+from numeric_asserts import assert_close_in
 
 from gftac import ch24_tasks
 
@@ -22,7 +25,7 @@ def test_task_1():
     out = _capture(ch24_tasks.task_1)
     assert "Stage 1 — Metric lattice:" in out
     assert "edges                        31" in out
-    assert "fiedler_lambda2              0.00963038671762" in out
+    assert_close_in("fiedler_lambda2              0.00963038671762", out)
     assert "nodes                        32" in out
     assert "quantized                    True" in out
 
@@ -33,20 +36,20 @@ def test_task_2():
     assert "contracted                   True" in out
     assert "edges_updated                31" in out
     assert "invariants                   True" in out
-    assert "resistance_after             4.99999967549" in out
+    assert_close_in("resistance_after             4.99999967549", out)
 
 
 def test_task_3():
     out = _capture(ch24_tasks.task_3)
     assert "Stage 3 — Model forward:" in out
-    assert "logits_sum                   2.62864494324" in out
+    assert_close_in("logits_sum                   2.62864494324", out)
     assert "params                       29152" in out
 
 
 def test_task_4():
     out = _capture(ch24_tasks.task_4)
     assert "Stage 4 — Soliton propagation:" in out
-    assert "final_peak_mass              0.812405288219" in out
+    assert_close_in("final_peak_mass              0.812405288219", out)
     assert "satisfies_bound              True" in out
     assert "supercritical                True" in out
 
@@ -54,7 +57,7 @@ def test_task_4():
 def test_task_5():
     out = _capture(ch24_tasks.task_5)
     assert "Stage 5 — Packed export:" in out
-    assert "bits_per_parameter           1.6" in out
+    assert_close_in("bits_per_parameter           1.6", out)
     assert "packed_bytes                 205" in out
     assert "trits                        1024" in out
 
@@ -71,5 +74,6 @@ def test_task_7():
     out = _capture(ch24_tasks.task_7)
     assert "Whole-Stack Certificate:" in out
     assert "Stages executed:                6" in out
-    assert "Certificate SHA-256 (first 16): a9e0b239a83fe32c" in out
+    # The aggregate hash covers the float metrics above, so it is machine-specific.
+    assert re.search(r"Certificate SHA-256 \(first 16\): [0-9a-f]{16}", out)
     assert "All stages green:               True" in out

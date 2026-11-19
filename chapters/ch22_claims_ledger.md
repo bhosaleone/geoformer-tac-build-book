@@ -280,8 +280,8 @@ print(f"  • All pinned values are asserted: {len(failures) == 0}")
 ```text
 --- Task 4 ---
 Pinned-Value Cross-Check:
-  • Rows with a pinned value:       22
-  • Pinned values found in test:    22
+  • Rows with a pinned value:       21
+  • Pinned values found in test:    21
   • Pinned values not found:        0
   • All pinned values are asserted: True
 ```
@@ -317,8 +317,8 @@ print(f"  • Rows match registry:            {rows == len(CLAIMS)}")
 CLAIMS.md Generation:
   • Output file:                    CLAIMS.md
   • Ledger rows written:            31
-  • File size (bytes):              7362
-  • Ledger SHA-256 (first 16):      06b82f3c9ff197ee
+  • File size (bytes):              7386
+  • Ledger SHA-256 (first 16):      b0a090ffcd52c95f
   • Rows match registry:            True
 ```
 

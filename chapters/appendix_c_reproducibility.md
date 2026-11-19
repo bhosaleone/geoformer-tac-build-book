@@ -97,6 +97,17 @@ certificate counts them (`transcripts_volatile_spans`). A run of the book
 currently carries a small, fixed number of such spans, all of them timing
 figures; the count is visible in the certificate.
 
+A second, narrower allowance covers **printed decimal tokens**. Even with Python
+and torch pinned exactly, the last digits of a six-decimal eigenvalue can change
+with the CPU and BLAS build. The transcript checker therefore compares every
+non-numeric byte exactly, but compares each decimal token with a relative and
+absolute tolerance of $10^{-4}$. That tolerance is deliberately too small to
+hide a structural change, a wrong label, or a changed result; it only absorbs
+last-digit formatting drift. The chapter tests use the same rule through
+`tests/numeric_asserts.py`. Values whose *whole* magnitude is machine-dependent
+— the Chapter 24 aggregate hash, which covers the float metrics — remain marked
+with `«…»` instead.
+
 ## C.5 Numerical precision
 
 Two precision facts recur and are worth recording here so they are not

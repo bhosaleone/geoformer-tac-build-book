@@ -38,7 +38,7 @@ Every number below was read from this directory on 2026-11-19, not estimated.
 | Build-along modules | 49 (`code/gftac/*.py`, including `__init__.py`) |
 | Public claims in `CLAIMS.md` | 31 (25 MEASURED / 4 MODELED / 2 RESEARCH DEMO) |
 | Certificate | `all_green: true`, 442 passed / 0 failed, 48 chapters verified |
-| Transcripts | 151 checked, 0 mismatches, 3 volatile spans |
+| Transcripts | 151 checked, 0 mismatches, 4 volatile spans (numeric tokens compared at 1e-4 tolerance) |
 | Artifact manifest (pre-publication baseline) | 129 files, `book_sha256 = 41b72dc74f6ae5b280bb23ac9a8041b93081ea2a09f3706a73c0b264567ca1d8` |
 | Certificate hash (baseline) | `efd3c911b82ff609509f13b28d0236edb34fa733b031f28380f6b76516f8f699` |
 | Artifact manifest (public edition) | 222 files; current `book_sha256` and `certificate_sha256` are in `book_verification_certificate.json` — the hash is deliberately not duplicated in prose, so this document can never drift from the certificate |

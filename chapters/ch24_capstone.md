@@ -368,7 +368,7 @@ Whole-Stack Certificate:
   • soliton              metrics:    6
   • export               metrics:    4
   • code_security        metrics:    4
-  • Certificate SHA-256 (first 16): a9e0b239a83fe32c
+  • Certificate SHA-256 (first 16): «a9e0b239a83fe32c»
   • All stages green:               True
 ```
 

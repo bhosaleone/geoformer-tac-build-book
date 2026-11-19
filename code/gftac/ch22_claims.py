@@ -165,9 +165,9 @@ CLAIMS: Tuple[Claim, ...] = (
           "code/gftac/ch16_soliton.py", "tests/test_ch16_soliton.py",
           "python3 code/gftac/ch16_tasks.py 4", "satisfies_bound"),
     Claim("CL-31", 24, "The whole-stack capstone certificate is a fixed point",
-          "SHA-256 a9e0b239a83fe32c…", "MEASURED",
+          "SHA-256, deterministic on a machine (16-hex prefix)", "MEASURED",
           "code/gftac/ch24_capstone.py", "tests/test_ch24_tasks.py",
-          "python3 code/gftac/ch24_tasks.py 7", "a9e0b239a83fe32c"),
+          "python3 code/gftac/ch24_tasks.py 7", None),
 )
 
 

@@ -39,5 +39,9 @@ All notable changes to the public edition are recorded here. Format follows
   values, not a five-seed benchmark result. Its transcript and test were updated
   with it. Previously a reader could reasonably mistake the $p$-value for
   benchmark evidence.
+- Transcript and task tests now compare printed decimals with a declared
+  $10^{-4}$ tolerance instead of exact byte equality, so the certificate no
+  longer depends on the CI machine's floating-point last digits. All structural
+  text remains byte-exact; the aggregate capstone hash is a volatile span.
 
 [1.0.0]: https://github.com/bhosaleone/geoformer-tac-build-book/releases/tag/v1.0.0

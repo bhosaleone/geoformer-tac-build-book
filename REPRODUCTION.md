@@ -9,12 +9,12 @@ machine-specific required. If any step fails on your machine, that is a bug wort
 ## 1. Environment
 
 The shipped certificate was produced with **Python 3.14.4** and **PyTorch 2.14.1+cpu** on Linux.
-Use the exact patch version if you want byte-identical transcript output: several chapter tasks
-print floating-point values to six or more decimals, and Python 3.14.10 changes the last digits
-enough to break byte-for-byte comparison. Both GitHub workflows pin `3.14.4` on `ubuntu-24.04` (the runner image that provides it) for this
-reason.
-Run-dependent wall times are confined to three declared `«volatile»` spans in the transcripts.
-CPU only is enough — no GPU, no network, and no API keys are needed after the clone.
+Both GitHub workflows pin `3.14.4` on `ubuntu-24.04` (the runner image that provides it) so CI
+matches that environment. Printed decimals are compared with an explicit $10^{-4}$ tolerance
+because last digits still move with the CPU and BLAS build; all non-numeric bytes remain exact
+(`tests/numeric_asserts.py`, `verify_transcripts.py`). Run-dependent wall times and the aggregate
+capstone hash are confined to four declared `«volatile»` spans in the transcripts. CPU only is
+enough — no GPU, no network, and no API keys are needed after the clone.
 
 System tools: `pandoc` and Playwright's Chromium are needed **only** to rebuild the PDF. They are
 not needed to verify the book.
@@ -36,7 +36,7 @@ make all
 | Gate | Command | Expected result |
 |---|---|---|
 | Chapter tests | `python3 -m pytest tests -q` | 442 passed, 0 failed |
-| Transcripts | `python3 verify_transcripts.py --quiet` | 151 checked, 0 mismatches, 3 volatile spans |
+| Transcripts | `python3 verify_transcripts.py --quiet` | 151 checked, 0 mismatches, 4 volatile spans |
 | Certificate | `python3 verify_book.py` | 222 artifacts hashed, `all_green: true` |
 | Certificate check | `python3 verify_book.py --check` | manifest, book hash, certificate hash and flags agree |
 | Claims | `python3 tools/check_claims.py` | 31 rows audited, `CLAIMS.md` byte-identical |

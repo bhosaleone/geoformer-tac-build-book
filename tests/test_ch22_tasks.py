@@ -46,7 +46,7 @@ def test_task_3():
 def test_task_4():
     out = _capture(ch22_tasks.task_4)
     assert "Pinned-Value Cross-Check:" in out
-    assert "Rows with a pinned value:       22" in out
+    assert "Rows with a pinned value:       21" in out
     assert "All pinned values are asserted: True" in out
 
 

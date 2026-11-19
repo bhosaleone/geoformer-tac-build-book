@@ -114,7 +114,7 @@
     {
       "kind": "chapter",
       "path": "chapters/ch22_claims_ledger.md",
-      "sha256": "5fb5677cdfd76ec77a1bca3b7cf21323c3e77607339d1afa845e8e7e9a12961a"
+      "sha256": "e37257f88d81b718846ae98d117f29efb3ea0c537057d37db9532777e189db21"
     },
     {
       "kind": "chapter",
@@ -124,7 +124,7 @@
     {
       "kind": "chapter",
       "path": "chapters/ch24_capstone.md",
-      "sha256": "1b0791b16bcff1b167b036f5f698634d65851d2191f717633736f7db035d1c8c"
+      "sha256": "70a16f2224a106509d8bbc365d378560061b450e63b1408949795bd6cfb3fe55"
     },
     {
       "kind": "appendix",
@@ -139,7 +139,7 @@
     {
       "kind": "appendix",
       "path": "chapters/appendix_c_reproducibility.md",
-      "sha256": "2efc07cb78729ec09a35b4bb49b07de96bd5f21c433abb8e1e79cbdc38c9bf32"
+      "sha256": "8485538a37448647bbbd6435afa706072de5f9475d1f4706207487864a7d84ce"
     },
     {
       "kind": "appendix",
@@ -364,7 +364,7 @@
     {
       "kind": "module",
       "path": "code/gftac/ch22_claims.py",
-      "sha256": "c25fc1164b043001889f9c22c5d096f96d314927a6b45119b534ad6ebd064452"
+      "sha256": "097b211f2435511c3010f3f25557a3328f5fbd50c475f377768f50a65b9e6b44"
     },
     {
       "kind": "module",
@@ -459,7 +459,7 @@
     {
       "kind": "test",
       "path": "tests/test_ch07_tasks.py",
-      "sha256": "9f9b3801086e370e8a94b1918d0610d9fad6a9e537539026f2c121198bba0371"
+      "sha256": "846f5da91cec348a19e838e23e7c0fd4ffaf35061208e554da4fdb066fe74269"
     },
     {
       "kind": "test",
@@ -469,7 +469,7 @@
     {
       "kind": "test",
       "path": "tests/test_ch08_tasks.py",
-      "sha256": "47eb89a6cb6f15bdd19aaab2b082d5eb6fba0906623e54bc3c9f83e312bdaa1d"
+      "sha256": "76ce3830d4df1ed804e023cb6b52bd401e669f9f30bf31e53adc5a6017725355"
     },
     {
       "kind": "test",
@@ -509,7 +509,7 @@
     {
       "kind": "test",
       "path": "tests/test_ch12_tasks.py",
-      "sha256": "e07e7e84b09c4fd7e54aff2b766b01aa049b2cd714ea6c3fd5d0cb54e3173417"
+      "sha256": "4dd56c0076925d7574a91ca83b2185af31217b96bcc45af13503cca8365f5b2c"
     },
     {
       "kind": "test",
@@ -609,7 +609,7 @@
     {
       "kind": "test",
       "path": "tests/test_ch22_tasks.py",
-      "sha256": "21d21e72c477b0c540c240dea7d0c0abd28d3af975d03dc51bae0df9461a941b"
+      "sha256": "a092c4a8c547c91a6b7bd13d67c1dc1848af3cc0612d45c49dfeab60ec8eefc5"
     },
     {
       "kind": "test",
@@ -624,17 +624,17 @@
     {
       "kind": "test",
       "path": "tests/test_ch24_capstone.py",
-      "sha256": "503f4a0c6d0974dcd0f2a2344e67f4f08074168d8de6b6af072f9c51a1613685"
+      "sha256": "dd1bed142fa7460def04159da1f4d050663dbfc9f94411185978fbc16822fd73"
     },
     {
       "kind": "test",
       "path": "tests/test_ch24_tasks.py",
-      "sha256": "b75792d201960d33ce34d62d6f7981b28009a95a5beb2a629b84992bde35fb25"
+      "sha256": "4cdf6f0318c562fe0d2a56ca7e48107bff248cd52bd189ebf5cffdfb7217c5e6"
     },
     {
       "kind": "doc",
       "path": "README.md",
-      "sha256": "9b865697a4c1216bc431f92c544f9d6c49cb4adb52a73a9af1f282d5872fd3ad"
+      "sha256": "e01531d49eac8b46ffaf6afb15f58b95b347589ddd952309c5d242f9ed0543b8"
     },
     {
       "kind": "doc",
@@ -644,7 +644,7 @@
     {
       "kind": "doc",
       "path": "CLAIMS.md",
-      "sha256": "06b82f3c9ff197eeca6a3086dc60df0bc17695476c78c4ee160e37540765d735"
+      "sha256": "b0a090ffcd52c95f5a0c656c679a1912ce239bbeb5d58a67853302bb090fd479"
     },
     {
       "kind": "doc",
@@ -674,7 +674,7 @@
     {
       "kind": "doc",
       "path": "REPRODUCTION.md",
-      "sha256": "273ff700103c0e143b8ed3c22a450e765a29d8aaf29a63664b16ea64be370e35"
+      "sha256": "3ae86501bea0bc05b572387fc905e49adf073035d93638fc00417bbf4b7461db"
     },
     {
       "kind": "doc",
@@ -684,7 +684,7 @@
     {
       "kind": "doc",
       "path": "GITHUB_LAUNCH_PLAN.md",
-      "sha256": "0a67401f2b488e33dc61afaa74e2cd8486de937a4c146d7594b6edec7bd7f98b"
+      "sha256": "9c7bb339b7218786e7a5eb753f10d3c69225fbe64916b537a408d0362c182b41"
     },
     {
       "kind": "doc",
@@ -694,7 +694,7 @@
     {
       "kind": "doc",
       "path": "CHANGELOG.md",
-      "sha256": "f296b6d76f6aea50ea3a75c5b11534e9086e9ab4d4d58e3e604ea10a6607e402"
+      "sha256": "98c4d0f4b09ace8617f7ae537cab28bb14d8bd6d14d1f8b0060575bf3520bc48"
     },
     {
       "kind": "doc",
@@ -769,7 +769,7 @@
     {
       "kind": "tool",
       "path": "verify_transcripts.py",
-      "sha256": "186c78f7f1f35dd2eab22f88316465609c81bd7b5936455579f4ddacd990feef"
+      "sha256": "317482553f8b230dd64114b927a2e225dfbd1edfc0bf84e7fd12bf94658ecd0d"
     },
     {
       "kind": "tool",
@@ -1114,8 +1114,8 @@
   ],
   "artifacts_hashed": 222,
   "book": "GeoFormer & TAC \u2014 The Build Book",
-  "book_sha256": "4908fc2f8febb3030aca810bffc4e5e62568ab4514b9526d78fe86eeefa82229",
-  "certificate_sha256": "f56ac865d186a1a1942190b18b4b6dd07a6fe775a03e50958c9c1d69b195b77f",
+  "book_sha256": "b83f70e3c457a6a9acbd1046d5719f704cdc8dbdbc43ffdc06f4d50198b2bdfc",
+  "certificate_sha256": "8d3d83f4493a37657356c01d3b93179dd05d36a8ed40b5a2c52be005000e72a1",
   "chapters": [
     {
       "chapter": "ch01_compositional_collapse",
@@ -1510,13 +1510,13 @@
   "parity_source": "vendored",
   "python": "3.14.4",
   "tests_green": true,
-  "timestamp_utc": "2026-11-19T05:09:11.888246+00:00",
+  "timestamp_utc": "2026-11-19T05:42:05.768933+00:00",
   "torch": "2.14.1+cpu",
   "total_failed": 0,
   "total_passed": 442,
   "transcripts_checked": 151,
   "transcripts_failed": 0,
   "transcripts_green": true,
-  "transcripts_volatile_spans": 3,
+  "transcripts_volatile_spans": 4,
   "verification_contract": "Every measured claim in the book is asserted by a chapter test, and every printed transcript is the byte-for-byte output of the artifact that produces it; this certificate records both, plus a SHA-256 manifest of every chapter, module and test file."
 }

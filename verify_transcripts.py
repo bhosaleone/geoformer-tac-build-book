@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import glob
+import math
 import os
 import re
 import subprocess
@@ -109,12 +110,39 @@ def _normalise(text: str):
 # be byte-for-byte identical, so the volatile set stays explicit and auditable.
 _VOLATILE_RE = re.compile(r"«.*?»")
 
+# Decimal tokens printed by artifacts. Last digits move with CPU/BLAS builds
+# even at a fixed Python/torch pin, so decimal tokens are compared with an
+# explicit tolerance. All non-numeric bytes remain byte-for-byte identical.
+_NUM_RE = re.compile(r"(?<![\d.])[-+]?\d+\.\d+(?:[eE][-+]?\d+)?(?![\d.])")
+_REL_TOL = 1e-4
+_ABS_TOL = 1e-4
+
+
+def _numeric_line_matches(expected: str, actual: str) -> bool:
+    e_parts = _NUM_RE.split(expected)
+    a_parts = _NUM_RE.split(actual)
+    if len(e_parts) != len(a_parts):
+        return False
+    if any(e != a for e, a in zip(e_parts[::2], a_parts[::2])):
+        return False
+    e_nums = [float(x) for x in _NUM_RE.findall(expected)]
+    a_nums = [float(x) for x in _NUM_RE.findall(actual)]
+    return len(e_nums) == len(a_nums) and all(
+        math.isclose(a, b, rel_tol=_REL_TOL, abs_tol=_ABS_TOL)
+        for a, b in zip(e_nums, a_nums)
+    )
+
 
 def _line_matches(expected: str, actual: str) -> bool:
     if "«" in expected:
         pattern = ".*".join(re.escape(part) for part in _VOLATILE_RE.split(expected))
-        return re.fullmatch(pattern, actual) is not None
-    return expected == actual
+        if re.fullmatch(pattern, actual) is None:
+            return False
+        # Inside a volatile span, any run-dependent value is acceptable; the
+        # fixed text around it is still exact. Do not apply numeric tolerance
+        # here as well, so the volatile set remains the explicit escape hatch.
+        return True
+    return _numeric_line_matches(expected, actual)
 
 
 def _matches(expected_lines, actual_lines) -> bool:

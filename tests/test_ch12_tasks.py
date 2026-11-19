@@ -4,6 +4,7 @@ tests/test_ch12_tasks.py — pin stdout of Chapter 12 tasks against exact book e
 """
 
 from __future__ import annotations
+from numeric_asserts import assert_close_in
 
 import io
 import sys
@@ -29,10 +30,10 @@ def test_task_1():
 def test_task_2():
     out = _capture(ch12_tasks.task_2)
     assert "Crossroad Node 0 Conductance Audit:" in out
-    assert "True Highway (-> 1):  W = 1.0000" in out
-    assert "Decoy Loops:         W = 0.4000" in out
-    assert "Conductance Ratio α₀ = W_true / W_decoy: 2.50  (target: 2.5)" in out
-    assert "Highway is 2.5x cheaper than decoy path" in out
+    assert_close_in("True Highway (-> 1):  W = 1.0000", out)
+    assert_close_in("Decoy Loops:         W = 0.4000", out)
+    assert_close_in("Conductance Ratio α₀ = W_true / W_decoy: 2.50  (target: 2.5)", out)
+    assert_close_in("Highway is 2.5x cheaper than decoy path", out)
 
 
 def test_task_3():
@@ -53,7 +54,7 @@ def test_task_4():
 def test_task_5():
     out = _capture(ch12_tasks.task_5)
     assert "Graph Laplacian Spectrum:" in out
-    assert "λ_1 (Ground State):       0.000000  (identically zero ✔)" in out
+    assert_close_in("λ_1 (Ground State):       0.000000  (identically zero ✔)", out)
     assert "(positive spectral gap ✔)" in out
 
 
