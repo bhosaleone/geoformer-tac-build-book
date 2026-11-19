@@ -11,7 +11,8 @@ machine-specific required. If any step fails on your machine, that is a bug wort
 The shipped certificate was produced with **Python 3.14.4** and **PyTorch 2.14.1+cpu** on Linux.
 Use the exact patch version if you want byte-identical transcript output: several chapter tasks
 print floating-point values to six or more decimals, and Python 3.14.10 changes the last digits
-enough to break byte-for-byte comparison. Both GitHub workflows pin `3.14.4` for this reason.
+enough to break byte-for-byte comparison. Both GitHub workflows pin `3.14.4` on `ubuntu-24.04` (the runner image that provides it) for this
+reason.
 Run-dependent wall times are confined to three declared `«volatile»` spans in the transcripts.
 CPU only is enough — no GPU, no network, and no API keys are needed after the clone.
 

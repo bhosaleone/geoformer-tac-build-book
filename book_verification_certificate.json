@@ -674,7 +674,7 @@
     {
       "kind": "doc",
       "path": "REPRODUCTION.md",
-      "sha256": "7ce03b9960a097c8befac63ceac1b964e796face5d8a15d1a2597d08c1473c4c"
+      "sha256": "273ff700103c0e143b8ed3c22a450e765a29d8aaf29a63664b16ea64be370e35"
     },
     {
       "kind": "doc",
@@ -744,12 +744,12 @@
     {
       "kind": "config",
       "path": ".github/workflows/release.yml",
-      "sha256": "009a8758bb9e6f4df1148e3a002e226e0f927e117a4e912f1414980672ec2ceb"
+      "sha256": "24abe8caa1da1d100b80a546e83b6fa33b067e5423e8fba492e617089e127fc5"
     },
     {
       "kind": "config",
       "path": ".github/workflows/verify.yml",
-      "sha256": "9ec52fbc8154a66c8dd21e4bbfa2a31c3ea69449b71e1e232e2d5a0fedb4a148"
+      "sha256": "48648c50aa9cfc3bed2f7e44fd0e8e505fe3a91c993cf4d4aac5d148df60e8c1"
     },
     {
       "kind": "config",
@@ -1114,8 +1114,8 @@
   ],
   "artifacts_hashed": 222,
   "book": "GeoFormer & TAC \u2014 The Build Book",
-  "book_sha256": "9176c0767e2a14de119640c581175b396e52d967d78de06105f14c9b06f552a3",
-  "certificate_sha256": "9d1c750b07937c34e733c6e229fe251f438131f236379dc70afc229e1e4667c8",
+  "book_sha256": "4908fc2f8febb3030aca810bffc4e5e62568ab4514b9526d78fe86eeefa82229",
+  "certificate_sha256": "f56ac865d186a1a1942190b18b4b6dd07a6fe775a03e50958c9c1d69b195b77f",
   "chapters": [
     {
       "chapter": "ch01_compositional_collapse",
@@ -1510,7 +1510,7 @@
   "parity_source": "vendored",
   "python": "3.14.4",
   "tests_green": true,
-  "timestamp_utc": "2026-11-19T04:59:41.120334+00:00",
+  "timestamp_utc": "2026-11-19T05:09:11.888246+00:00",
   "torch": "2.14.1+cpu",
   "total_failed": 0,
   "total_passed": 442,
