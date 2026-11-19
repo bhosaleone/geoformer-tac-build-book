@@ -62,7 +62,7 @@ No extra SDK install is needed: pinned parity copies ship in `third_party/`
 ## Quickstart
 
 ```bash
-# Environment: Python ≥ 3.10, torch ≥ 2.0, scipy, matplotlib (CPU is enough)
+# Environment: Python 3.14.4 (exact patch, for byte-identical transcripts), torch 2.14.1+cpu, scipy, matplotlib
 cd book_geoformer_tac
 
 # Verify everything and emit the certificate (7 gates)

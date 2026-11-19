@@ -9,8 +9,10 @@ machine-specific required. If any step fails on your machine, that is a bug wort
 ## 1. Environment
 
 The shipped certificate was produced with **Python 3.14.4** and **PyTorch 2.14.1+cpu** on Linux.
-Use those if you want byte-identical certificate hashes. Other versions should still pass the
-tests; run-dependent values are confined to three declared `«volatile»` spans in the transcripts.
+Use the exact patch version if you want byte-identical transcript output: several chapter tasks
+print floating-point values to six or more decimals, and Python 3.14.10 changes the last digits
+enough to break byte-for-byte comparison. Both GitHub workflows pin `3.14.4` for this reason.
+Run-dependent wall times are confined to three declared `«volatile»` spans in the transcripts.
 CPU only is enough — no GPU, no network, and no API keys are needed after the clone.
 
 System tools: `pandoc` and Playwright's Chromium are needed **only** to rebuild the PDF. They are
