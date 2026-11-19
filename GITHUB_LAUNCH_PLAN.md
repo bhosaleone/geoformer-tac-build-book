@@ -45,7 +45,7 @@ Every number below was read from this directory on 2026-11-19, not estimated.
 | Environment that produced it | Python 3.14.4, torch 2.14.1+cpu |
 | PDF | 18.2 MB (`GeoFormer_and_TAC_The_Build_Book.pdf`) |
 | Tracked-size candidate | ~35 MB total after vendoring; figures 7.7 MB, build 4.3 MB, vendored SDKs 0.7 MB |
-| Git state at planning time | **not a git repository** — `git init` was performed during implementation |
+| Git state | **pushed** — local repo initialized, commit `593dd9d`, tag `v1.0.0`, remote `bhosaleone/geoformer-tac-build-book` on `main` |
 | Secrets / local paths in tree | 0 matches for `/home/shri`, emails, tokens, or private keys (scanned excluding `build/` and the PDF) |
 
 Two facts shape the plan. First, the book is already a verified product; the launch should not
@@ -211,7 +211,7 @@ committed certificate, not from this planning document.
 exists but its metadata is stale relative to the repository: it reports 129 hashed artifacts
 (the repository now hashes 222), it carries GPL-3.0-or-later as the book license (wrong — the book
 text is CC BY-NC-SA 4.0 and the code is AGPL-3.0-only), its PDF predates the reviewer appendices,
-and it has no GitHub repository link. Before the public push, edit the record to: set the license
+and it has no GitHub repository link. Before announcing, edit the record to: set the license
 to CC BY-NC-SA 4.0, update the verification numbers to 442/151/222, upload the freshly built PDF,
 add the repository URL as a related identifier, and keep `10.5281/zenodo.23730305` as the parent
 program DOI. The repository now cites the book DOI in `README.md`, `CITATION.cff`, and the PDF
@@ -274,8 +274,9 @@ updated in the same commit.
    history *before* pushing, not after.
 5. **Init and commit — done locally.** `main` branch and first commit prepared; signing needs a
    verified key on the pushing machine.
-6. **Create remote.** `git remote add origin https://github.com/bhosaleone/geoformer-tac-build-book.git`,
-   push, enable branch protection with the `verify` workflow required.
+6. **Create remote — done.** Remote is `https://github.com/bhosaleone/geoformer-tac-build-book.git`;
+   `main` at `593dd9d` and tag `v1.0.0` are pushed. Still pending: enable branch protection on
+   `main` with the `verify` workflow required, after the first CI run is confirmed green.
 7. **CI dry run.** Open a test PR, confirm the gates run and that `--check` fails when a chapter
    hash is deliberately perturbed (then revert). A gate that has never failed is not a gate.
 8. **Tag and release.** `git tag -s v1.0.0`; the release workflow attaches the PDF, certificate,

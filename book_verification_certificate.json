@@ -684,7 +684,7 @@
     {
       "kind": "doc",
       "path": "GITHUB_LAUNCH_PLAN.md",
-      "sha256": "3b81f1ae44866911438305298a5df992df3dcab54764af8dfa3fdcf338a6ee42"
+      "sha256": "0a67401f2b488e33dc61afaa74e2cd8486de937a4c146d7594b6edec7bd7f98b"
     },
     {
       "kind": "doc",
@@ -1114,8 +1114,8 @@
   ],
   "artifacts_hashed": 222,
   "book": "GeoFormer & TAC \u2014 The Build Book",
-  "book_sha256": "f0f98291d9c9da0d56b93411e824e9a5cde25dd9de98575f0c060958707b53eb",
-  "certificate_sha256": "1044ad55ca485b3eb1adfdf75e7053badc52fb0fc23815cb48a7b5a5732fac4e",
+  "book_sha256": "509524901efe2544fd3bd5fa53f76018ba0ae6b0d5bbc36159f8179c9d54b4e3",
+  "certificate_sha256": "43a2fbab1766b91ae5de02f626226c1ff81397378df6a109ccdf582304204d5b",
   "chapters": [
     {
       "chapter": "ch01_compositional_collapse",
@@ -1510,7 +1510,7 @@
   "parity_source": "vendored",
   "python": "3.14.4",
   "tests_green": true,
-  "timestamp_utc": "2026-11-19T04:24:08.459936+00:00",
+  "timestamp_utc": "2026-11-19T04:49:32.853160+00:00",
   "torch": "2.14.1+cpu",
   "total_failed": 0,
   "total_passed": 442,
