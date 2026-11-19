@@ -1,0 +1,30 @@
+{
+  "title": "GeoFormer & TAC — The Build Book: From Thermodynamic First Principles to Trained, Quantized, Integrated Models",
+  "description": "A self-verifying build book: 24 chapters, 4 appendices, 442 passing checks, 151 byte-for-byte transcripts, a 31-row claims ledger, and a SHA-256 certificate covering the whole tree.",
+  "creators": [
+    {
+      "name": "Bhosale, Shrikant",
+      "affiliation": "Government Medical College, Sambhajinagar; TWIST POOL Labs; SetMD; ISL Research; NanoCERN Unit"
+    }
+  ],
+  "license": "CC BY-NC-SA 4.0",
+  "version": "1.0.0",
+  "publication_date": "2026-11-19",
+  "keywords": [
+    "GeoFormer", "TAC", "thermodynamic computing", "ternary quantization",
+    "geodesic attention", "reproducible research", "verified book"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23730305",
+      "relation": "is part of",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/bhosaleone/geoformer-tac-build-book",
+      "relation": "is supplement to",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Code is AGPL-3.0-only; text and figures are CC BY-NC-SA 4.0; commercial proprietary exemption available on request."
+}

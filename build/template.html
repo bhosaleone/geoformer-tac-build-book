@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>$title$</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    tags: 'ams',
+    processEscapes: true,
+    macros: {}
+  },
+  svg: { fontCache: 'global', scale: 1.0 },
+  options: { enableMenu: false, enableAssistiveMml: false, renderActions: {} }
+};
+</script>
+$for(header-includes)$
+$header-includes$
+$endfor$
+$if(math)$
+$math$
+$endif$
+<style>
+/* ---------- page geometry ---------- */
+@page { size: A4; }
+
+/* ---------- base typography ---------- */
+html { font-size: 10.5pt; }
+body {
+  font-family: "Noto Serif", "DejaVu Serif", Georgia, serif;
+  line-height: 1.5;
+  color: #16181d;
+  margin: 0;
+  text-align: justify;
+  -webkit-hyphens: auto; hyphens: auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+p { margin: 0 0 0.62em; orphans: 2; widows: 2; }
+strong { color: #0f1115; }
+em { }
+a { color: #1c4b82; text-decoration: none; }
+
+/* ---------- headings ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans", "DejaVu Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.22;
+  color: #14304f;
+  text-align: left;
+  -webkit-hyphens: none; hyphens: none;
+}
+h1 {
+  font-size: 1.72em;
+  font-weight: 700;
+  margin: 0 0 0.7em;
+  padding: 0 0 0.28em;
+  border-bottom: 3px solid #14304f;
+  break-before: page;
+  break-after: avoid;
+}
+/* the first h1 after the toc shouldn't add a leading blank page */
+main > h1:first-of-type { break-before: page; }
+h2 {
+  font-size: 1.24em;
+  margin: 1.45em 0 0.42em;
+  padding-bottom: 0.12em;
+  border-bottom: 1px solid #d7dee8;
+  break-after: avoid;
+}
+h3 { font-size: 1.06em; margin: 1.15em 0 0.34em; break-after: avoid; }
+h4 { font-size: 0.98em; margin: 0.95em 0 0.3em; color: #23405f; break-after: avoid; }
+
+/* ---------- code ---------- */
+code, pre, kbd, samp {
+  font-family: "DejaVu Sans Mono", "Noto Sans Mono", "Liberation Mono", monospace;
+}
+code {
+  font-size: 0.85em;
+  background: #f2f4f7;
+  border: 1px solid #e4e8ee;
+  border-radius: 3px;
+  padding: 0.05em 0.28em;
+  color: #20303f;
+  -webkit-hyphens: none; hyphens: none;
+}
+pre {
+  background: #f7f9fc;
+  border: 1px solid #e1e6ee;
+  border-left: 3px solid #9fb3c8;
+  border-radius: 4px;
+  padding: 0.62em 0.8em;
+  margin: 0.7em 0 0.9em;
+  font-size: 0.78em;
+  line-height: 1.42;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  break-inside: avoid;
+  color: #1b2530;
+}
+pre code { background: none; border: 0; padding: 0; font-size: 1em; color: inherit; }
+/* pandoc highlight: keep colours, print them */
+.sourceCode .kw { color: #8959a8; }
+.sourceCode .dt { color: #4271ae; }
+.sourceCode .dv, .sourceCode .bn, .sourceCode .fl { color: #718c00; }
+.sourceCode .st, .sourceCode .ch, .sourceCode .sc { color: #b7581f; }
+.sourceCode .co, .sourceCode .cm, .sourceCode .c1 { color: #7a8590; font-style: italic; }
+.sourceCode .fu, .sourceCode .va { color: #3e6ea3; }
+.sourceCode .op { color: #4a5568; }
+
+/* ---------- tables ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.9em 0 1.1em;
+  font-size: 0.86em;
+  break-inside: avoid;
+  font-family: "Noto Sans", "DejaVu Sans", sans-serif;
+}
+/* wide, multi-column tables (e.g. the claims ledger) get a smaller face */
+table:has(> thead th:nth-child(6)) { font-size: 0.7em; }
+th, td {
+  border: 1px solid #cdd6e0;
+  padding: 0.34em 0.5em;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+thead th { background: #eef3f9; color: #14304f; font-weight: 700; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+td code, th code { font-size: 0.92em; }
+
+/* ---------- blockquotes (theorems, definitions) ---------- */
+blockquote {
+  margin: 0.85em 0;
+  padding: 0.4em 0.95em 0.4em 1em;
+  border-left: 4px solid #1c4b82;
+  background: #f4f8fd;
+  color: #1c2a3a;
+  break-inside: avoid;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ---------- figures & images ---------- */
+figure, p:has(> img) {
+  margin: 1em 0;
+  text-align: center;
+  break-inside: avoid;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.5em auto;
+}
+figcaption, figure p {
+  font-size: 0.82em;
+  color: #55636f;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.35em;
+}
+/* captions written as an italic line right under an image */
+p:has(> img) em {
+  font-size: 0.82em;
+  color: #55636f;
+  font-style: italic;
+  -webkit-hyphens: none; hyphens: none;
+}
+p:has(> img) > em { display: block; margin-top: 0.4em; }
+
+/* ---------- rules, lists ---------- */
+hr { border: 0; border-top: 1px solid #dbe2ea; margin: 1.3em 0; }
+ul, ol { margin: 0.4em 0 0.8em; padding-left: 1.5em; }
+li { margin: 0.18em 0; }
+
+/* ---------- math ---------- */
+mjx-container { line-height: 0; }
+mjx-container[display="true"] { margin: 0.75em 0; }
+
+/* ---------- title page ---------- */
+.title-page {
+  break-after: page;
+  padding-top: 6mm;
+  text-align: center;
+}
+.title-page .band { height: 6px; background: #14304f; width: 100%; margin: 0 0 26mm; }
+.title-page .kicker {
+  font-family: "Noto Sans", sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.72em;
+  color: #6b7885;
+  margin-bottom: 14mm;
+}
+.title-page h1.title {
+  font-family: "Noto Serif", serif;
+  font-size: 2.7em;
+  line-height: 1.1;
+  color: #14304f;
+  border: 0;
+  margin: 0 0 6mm;
+  padding: 0;
+  break-before: avoid;
+}
+.title-page .subtitle {
+  font-size: 1.28em;
+  color: #2c4a6b;
+  font-style: italic;
+  margin: 0 auto 5mm;
+  max-width: 150mm;
+}
+.title-page .tagline {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.95em;
+  color: #1c4b82;
+  letter-spacing: 0.02em;
+  margin: 0 0 22mm;
+}
+.title-page .rule { width: 40mm; height: 3px; background: #9fb3c8; margin: 0 auto 22mm; }
+.title-page .author { font-size: 1.12em; color: #16181d; margin: 0 0 1.5mm; }
+.title-page .org { font-size: 0.9em; color: #55636f; margin: 0 0 12mm; }
+.title-page .meta {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.8em;
+  color: #55636f;
+  line-height: 1.9;
+}
+.title-page .meta a { color: #1c4b82; }
+.title-page .cert {
+  margin-top: 18mm;
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 0.66em;
+  color: #7a8590;
+}
+
+/* ---------- table of contents ---------- */
+.toc-page { break-after: page; }
+.toc-page .toc-title {
+  font-size: 1.6em;
+  border-bottom: 3px solid #14304f;
+  padding-bottom: 0.24em;
+  margin-bottom: 0.6em;
+  break-before: avoid;
+}
+#TOC { font-family: "Noto Sans", "DejaVu Sans", sans-serif; font-size: 0.9em; }
+#TOC ul { list-style: none; padding-left: 0; margin: 0; }
+#TOC > ul > li { margin: 0.28em 0; }
+#TOC > ul > li > a { font-weight: 700; color: #14304f; }
+#TOC ul ul { padding-left: 1.1em; margin: 0.1em 0 0.3em; }
+#TOC ul ul li { margin: 0.05em 0; font-size: 0.94em; }
+#TOC ul ul a { color: #40566e; }
+#TOC a { text-decoration: none; }
+#TOC .toc-section-number { color: #8a97a4; margin-right: 0.4em; }
+
+/* keep a heading with its first paragraph */
+h1 + p, h2 + p, h3 + p { break-before: avoid; }
+</style>
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+$if(toc)$
+<section class="toc-page">
+<h1 class="toc-title">Contents</h1>
+$table-of-contents$
+</section>
+$endif$
+<main>
+$body$
+</main>
+$for(include-after)$
+$include-after$
+$endfor$
+</body>
+</html>

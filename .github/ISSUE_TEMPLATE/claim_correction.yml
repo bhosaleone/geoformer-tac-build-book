@@ -1,0 +1,32 @@
+name: Claim correction / erratum
+description: A public number is wrong, mislabeled, or no longer pinned by its test.
+title: "[claim] "
+labels: [erratum]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID and chapter
+      placeholder: "CL-09, chapter 8"
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong?
+      description: Quote the book value and the value you can reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Command, seed, and observed output.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        A correction must change the artifact, its test, the chapter transcript,
+        and the claims ledger together, then regenerate the certificate. See
+        [CONTRIBUTING.md](https://github.com/bhosaleone/geoformer-tac-build-book/blob/main/CONTRIBUTING.md).

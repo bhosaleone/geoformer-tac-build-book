@@ -1,0 +1,30 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ["--maxkb=19000"]   # the certified PDF is ~18 MB and stays tracked
+      - id: check-merge-conflict
+
+  - repo: local
+    hooks:
+      - id: spdx
+        name: license markers
+        entry: python3 tools/check_spdx.py
+        language: system
+        pass_filenames: false
+        files: ^(code|tests|tools|chapters)/
+      - id: claims
+        name: claims ledger
+        entry: python3 tools/check_claims.py
+        language: system
+        pass_filenames: false
+        files: ^CLAIMS\.md$
+      - id: public-hygiene
+        name: pre-publish hygiene
+        entry: python3 tools/check_public.py
+        language: system
+        pass_filenames: false

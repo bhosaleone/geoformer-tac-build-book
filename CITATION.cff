@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this book or its verified build-along code, please cite it."
+type: book
+title: "GeoFormer & TAC — The Build Book: From Thermodynamic First Principles to Trained, Quantized, Integrated Models"
+authors:
+  - family-names: Bhosale
+    given-names: Shrikant
+    name-suffix: "(Atmabhan Pandit)"
+    affiliation: "Government Medical College, Sambhajinagar, Maharashtra, India; TWIST POOL Labs; SetMD; ISL Research; NanoCERN Unit"
+year: 2026
+version: 1.0.0
+doi: 10.5281/zenodo.24358478
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23730305
+    description: Parent GeoFormer research program record
+url: "https://github.com/bhosaleone/geoformer-tac-build-book"
+license: "AGPL-3.0-only (code); CC-BY-NC-SA-4.0 (text)"
+keywords:
+  - GeoFormer
+  - TAC
+  - thermodynamic computing
+  - ternary quantization
+  - geodesic attention
+  - reproducible research
+  - verified book
+abstract: >-
+  A build-along exposition in which every claim is asserted by a test, every
+  printed transcript is checked byte-for-byte against its artifact, and a
+  SHA-256 certificate records the whole tree. Includes 24 chapters, four
+  appendices, 442 passing checks, 151 checked transcripts, and a claims ledger
+  labeling every public number MEASURED, MODELED, or RESEARCH DEMO.
+notes: >-
+  Drafting was AI-assisted within the author's research program (OpenCode);
+  all measurements were executed and verified by the author's pipeline. Chapter
+  19 is a research demo and makes no clinical claim.

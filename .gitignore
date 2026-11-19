@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated build intermediates (the PDF and vendored MathJax are tracked)
+build/book_body.md
+build/book.html
+build/titlepage.html
+
+# Local / scratch
+.parity/
+*.tmp
+*.pdf.tmp
+.DS_Store
+.env
+.env.*
+!.env.example

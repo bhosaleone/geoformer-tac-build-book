@@ -1,0 +1,122 @@
+# GeoFormer & TAC — The Build Book: Intellectual Property & Licensing Terms
+
+Copyright (c) 2026 Shrikant Bhosale (Atmabhan Pandit)  
+Government Medical College (GMC), Sambhajinagar, Maharashtra, India  
+SetMD │ TWIST POOL Labs │ ISL Research │ NanoCERN Unit
+
+This repository contains both software and a scientific book. They are licensed
+separately. Read both sections before copying, hosting, adapting, or selling
+anything from this repository.
+
+Research program DOI: [10.5281/zenodo.23730305](https://doi.org/10.5281/zenodo.23730305)  
+Commercial licensing enquiries: **research@twistpool.org**
+
+---
+
+## 1. Software source code — GNU AGPLv3, version 3 only
+
+All software in this repository — `code/gftac/`, `tests/`, `conftest.py`,
+`verify_book.py`, `verify_transcripts.py`, `build_pdf.py`,
+`render_book_figures.py`, `.github/`, `tools/`, and the configuration files —
+is licensed under the **GNU Affero General Public License, version 3 only
+(AGPL-3.0-only)**.
+
+The complete, verbatim license text is included at
+[`third_party/licenses/AGPL-3.0.txt`](third_party/licenses/AGPL-3.0.txt) and at
+<https://www.gnu.org/licenses/agpl-3.0.txt>.
+
+Two consequences are stated here because they are easy to miss:
+
+* **Remote network interaction is distribution.** If you modify the software
+  and let users interact with it over a network, AGPL §13 requires you to offer
+  those users the Corresponding Source of your modified version, at no charge.
+* **Derivative works inherit the license.** AGPL §5(c) requires prominent
+  modification notices and §10 forbids adding further restrictions. The patent
+  grant in §11 is subject to the same terms.
+
+The book's parity tests ship a trimmed, pinned copy of the companion SDKs under
+`third_party/` so a fresh clone can verify itself. Those files keep their
+upstream licenses; see §4 and `THIRD_PARTY_NOTICES.md`.
+
+---
+
+## 2. Commercial proprietary exemption (dual licensing)
+
+The AGPL license above is the default for everyone, including commercial
+organisations that are willing to meet its obligations. A separate **commercial
+proprietary license** is available from the copyright holder for organisations
+that cannot or do not wish to comply with AGPL §13 source-disclosure,
+modification-notice, and share-alike obligations, and/or that wish to use the
+book's text and figures commercially.
+
+To request it, write to **research@twistpool.org** with your organisation, use
+case, deployment model, and territory.
+
+**No commercial right is granted by this file.** A commercial license takes
+effect only when a separate written agreement is signed by the copyright
+holder. Nothing here is an offer capable of acceptance by conduct, and no
+price, term, sublicensing right, support obligation, indemnity, or patent
+covenant is promised until that agreement exists. Until then, the AGPL and CC
+licenses below govern your use.
+
+---
+
+## 3. Book text, chapters, figures, and generated documents — CC BY-NC-SA 4.0
+
+The book itself — `chapters/`, `figures/`, `README.md`, `BOOK_PLAN.md`,
+`CLAIMS.md`, `GITHUB_LAUNCH_PLAN.md`, the generated PDF, and the HTML rendering
+— is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike
+4.0 International License (CC BY-NC-SA 4.0)**.
+
+Full legal code: <https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>  
+Human-readable deed: <https://creativecommons.org/licenses/by-nc-sa/4.0/>
+
+Under this license you may share and adapt the material for **non-commercial**
+purposes, provided you give appropriate credit to Shrikant Bhosale (Atmabhan
+Pandit), link to the license, indicate changes, and distribute your adaptations
+under the same license. Commercial use — including selling the book, putting it
+behind a paywall, or incorporating it into a paid course, product, or
+consultancy deliverable — requires the written commercial license in §2.
+
+---
+
+## 4. Third-party material
+
+Vendored or generated third-party material is **not** relicensed by this file.
+It retains its upstream license:
+
+| Material | License | Location |
+|---|---|---|
+| MathJax 3 SVG build + `boldsymbol.js` | Apache-2.0 | `build/`, full text in `third_party/licenses/Apache-2.0.txt` |
+| `geoformer` SDK parity subset | AGPL-3.0-only | `third_party/geoformer/` (upstream LICENSE included) |
+| `TAC` SDK parity subset | MIT | `third_party/TAC/` (upstream LICENSE included) |
+| AGPL-3.0 canonical text | AGPL-3.0 | `third_party/licenses/AGPL-3.0.txt` |
+
+See `THIRD_PARTY_NOTICES.md` for provenance, upstream commits, and the exact
+modifications made to the vendored subsets. Build tools (pandoc, Playwright /
+Chromium, pypdf, pytest, torch, SciPy, Z3) are not redistributed here.
+
+---
+
+## 5. Names, trademarks, and patents
+
+The names "GeoFormer", "TAC", "The Build Book", "TWIST POOL Labs", "SetMD",
+"ISL Research", and "NanoCERN Unit", and the book's title and identifying
+marks, are not licensed by §1 or §3. You may use them to attribute this work as
+required by the CC license and to describe compatibility in a factual way; you
+may not use them in a manner that suggests endorsement, sponsorship, or
+ownership by the author or those organisations without written permission.
+
+No express patent license is granted by this notice beyond the patent terms of
+AGPLv3 §11 for the software and the rights conveyed by CC BY-NC-SA 4.0 for the
+text. All other patent rights are reserved and may be addressed only in the
+separate commercial agreement described in §2.
+
+---
+
+## 6. No warranty
+
+The software and the book are provided "as is", without warranty of any kind.
+The verification certificate records what was checked on a stated environment;
+it is evidence of reproducibility, not a guarantee of fitness for any purpose.
+Chapter 19 is explicitly labeled RESEARCH DEMO and contains no clinical claim.

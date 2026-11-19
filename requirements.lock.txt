@@ -1,0 +1,15 @@
+# Environment used to produce the shipped verification certificate.
+# Python 3.14.4, PyTorch 2.14.1+cpu (CPU wheel). `+local` suffixes from the
+# certified host are normalised here to their upstream release numbers.
+numpy==2.5.4
+scipy==1.18.1
+sympy==1.14.0
+networkx==3.6.1
+pandas==3.0.6
+matplotlib==3.10.7
+torch==2.14.1
+pytest==9.1.1
+z3-solver==5.1.0.0
+pypdf==6.21.2
+playwright==1.64.1
+tqdm==4.70.1

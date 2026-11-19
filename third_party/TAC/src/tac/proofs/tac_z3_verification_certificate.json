@@ -1,0 +1,32 @@
+{
+  "project": "Turing-TAC Coupler: Continuous Thermodynamic Architecture",
+  "author": "Shrikant Bhosale (Atmabhan Pandit)",
+  "affiliation": "MBBS Student, GMC Sambhajinagar, Maharashtra, India",
+  "verifier": "Microsoft Z3 SMT Solver (z3-solver v5.1.0)",
+  "timestamp": "2026-10-27T13:42:27Z",
+  "all_theorems_verified": true,
+  "verification_duration_seconds": 0.0298,
+  "theorems": {
+    "Theorem 1: Lyapunov Free-Energy Dissipation (dF/dt <= 0)": {
+      "verified": true,
+      "formal_detail": "UNSAT: No counterexample exists. Continuous gradient flow strictly dissipates energy (dF/dt <= 0) and reaches equilibrium iff ||grad F|| = 0."
+    },
+    "Theorem 2: Dimension-Independent Asymptotic Relaxation Bound": {
+      "verified": true,
+      "formal_detail": "UNSAT: Quadratic dissipation strictly bounded below by 2*kappa*lambda_min*||s||^2. Relaxation timescale is governed exclusively by spectral gap lambda_min, establishing dimension-independent O(1) continuous physical relaxation."
+    },
+    "Theorem 3: Bistable Double-Well Soft-Spin Invariant": {
+      "verified": true,
+      "formal_detail": "UNSAT: Stationary points uniquely partitioned into {-1, +1} (stable attractor basin) and {0} (unstable saddle). Restoring force holds for all |s| > 1, guaranteeing confinement."
+    },
+    "Theorem 4: Combinatorial Exact Cover Ground-State Equivalence": {
+      "verified": true,
+      "formal_detail": "UNSAT: Zero-energy ground state of continuous functional F(s) is mathematically equivalent to the exact discrete combinatorial solution."
+    },
+    "Theorem 5: S5 Symmetric Group Representation Invariant (137)": {
+      "verified": true,
+      "formal_detail": "SAT & PROVED: Group order |S5| = 120, Frobenius-Schur dimension identity sum(d_i^2) = 120 holds exactly, and the algebraic representation denominator 120 + 4^2 + 1 = 137 is verified."
+    }
+  },
+  "sha256_fingerprint": "e46541419a8d2a64de4d6548f2c5c9265c5a7916df3396d8f9e8eefd57ff26f6"
+}

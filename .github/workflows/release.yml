@@ -1,0 +1,71 @@
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: build and publish a tagged edition
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y pandoc
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.lock.txt
+          python3 -m playwright install chromium
+
+      - name: Gate on the committed certificate
+        run: python3 verify_book.py --check
+
+      - name: Re-run tests and transcripts
+        run: |
+          python3 -m pytest tests -q
+          python3 verify_transcripts.py --quiet
+
+      - name: Build the certified PDF
+        run: python3 build_pdf.py
+
+      - name: Freeze an SBOM manifest
+        run: |
+          {
+            echo "# Software bill of materials"
+            echo
+            echo "Generated for ${GITHUB_REF_NAME}; environment: $(python3 -V), $(python3 -c 'import torch;print(torch.__version__)')"
+            echo
+            echo '```text'
+            python3 -m pip freeze
+            echo '```'
+          } > SBOM.md
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            GeoFormer_and_TAC_The_Build_Book.pdf
+            book_verification_certificate.json
+            CLAIMS.md
+            requirements.lock.txt
+            SBOM.md
+          generate_release_notes: true
+          body: |
+            Certified edition of *GeoFormer & TAC — The Build Book*.
+
+            Verification: 442 tests passed, 151 transcripts matched, 0 failures.
+            Run `python3 verify_book.py --check` in this checkout to prove the
+            certificate describes the published bytes.
+
+            Code: AGPL-3.0-only. Book and figures: CC BY-NC-SA 4.0.
+            Commercial proprietary exemption: research@twistpool.org.

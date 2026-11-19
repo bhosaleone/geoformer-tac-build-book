@@ -1,0 +1,12 @@
+[project]
+name = "gftac-build-book"
+version = "1.0.0"
+description = "Verified build-along book for GeoFormer and TAC"
+requires-python = ">=3.10"
+license = { text = "AGPL-3.0-only (code); CC-BY-NC-SA-4.0 (text)" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "parity: test compares the book implementation with a pinned vendored SDK",
+]

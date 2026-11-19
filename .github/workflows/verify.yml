@@ -1,0 +1,43 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: verify (certificate, tests, transcripts, licensing)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+
+      - name: Install pinned dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.lock.txt
+
+      - name: Public hygiene
+        run: python3 tools/check_public.py
+
+      - name: License markers
+        run: python3 tools/check_spdx.py
+
+      - name: Claims ledger
+        run: python3 tools/check_claims.py
+
+      - name: Certificate describes this tree
+        run: python3 verify_book.py --check
+
+      - name: Chapter tests
+        run: python3 -m pytest tests -q
+
+      - name: Transcript bytes
+        run: python3 verify_transcripts.py --quiet
